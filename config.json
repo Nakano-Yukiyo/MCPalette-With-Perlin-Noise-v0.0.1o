@@ -1,0 +1,6 @@
+{
+  "token": "Bot token here",
+  "clientId": "Bot's client id here",
+  "guildId": "Server ID here",
+  "resourcesPath": "Insert Directory to MC Resources here" 
+}
