@@ -16,7 +16,7 @@ const excludedList = [
     'mangrove_propagule_hanging','test','sculk_sensor_tendril_inactive',
     'sculk_sensor_tendril_active','debug'
 ];
-
+// RAHH RACISM!!
 function loadBlockList(listPath, allowExceptions = false) {
     const raw = fs.readFileSync(listPath);
     const json = JSON.parse(raw);
@@ -53,7 +53,7 @@ function rgbToHsv(r,g,b) {
     if(h<0) h+=360;
     return {h,s,v};
 }
-
+// RAHH RACISM!!! PART TWO!!
 function averageColor(img){
     const canvas=Canvas.createCanvas(img.width,img.height);
     const ctx=canvas.getContext('2d');
@@ -86,7 +86,7 @@ function createAtlasSortedByColor(images,tileSize=16){
     });
     return {atlas,cols,rows,images:imagesWithColor};
 }
-
+// puts the textures into one whole big ol image called an atlas
 function generatePaletteFromAtlas3D(atlasData, outputSize=5,tileSize=16,rowWidth=10,zValue=null){
     const { atlas, cols, rows, images }=atlasData;
     const perlin=new Perlin();
@@ -149,7 +149,7 @@ function drawNoiseSlice3D(perlin,width,height,z,scale=6){
     scaledCtx.drawImage(canvas,0,0,scaled.width,scaled.height);
     return scaled;
 }
-
+// this took me SO SO SO fucking long
 // Slash commands
 const commands=[
     new SlashCommandBuilder()
@@ -167,7 +167,7 @@ const commands=[
         .setName('excluded')
         .setDescription('Show list of excluded textures.')
 ].map(c=>c.toJSON());
-
+// the horrors of shiryu
 // Register commands
 const rest=new REST({version:'10'}).setToken(config.token);
 (async()=>{try{await rest.put(Routes.applicationGuildCommands(config.clientId,config.guildId),{body:commands});}catch(e){console.error(e);}})();
@@ -221,7 +221,7 @@ client.on('interactionCreate',async interaction=>{
             }
         }catch(e){console.error(e); await interaction.editReply('❌ Error generating palette.');}
     }
-
+// someone pleas hug me wat the fuck is thiss
     if(interaction.commandName==='mcatlas'){
         await interaction.deferReply();
         try{
